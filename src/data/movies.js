@@ -1,0 +1,122 @@
+const movies = [
+    {
+        id: 1,
+        titulo: 'Bastardo Sin Gloria', 
+        sinopsis: 'II Guerra Mundial, Francia, Shosanna presencia la ejecución de su familia por orden del coronel nazi Hans Landa. Huye a Paris y adopta una nueva identidad como propietaria de un cine. Mientras el teniente Aldo Raine adiestra a un grupo de soldados judíos. Los hombres de Raine y una actriz alemana que agente doble, deben llevar a cabo una misión que hará caer a los jefes del Tercer Reich. El destino quiere que todos se encuentren bajo la marquesina de un cine donde Shosanna espera para vengarse.', 
+        director: 'Quentin Tarantino', 
+        anioPub: 2009, 
+        duracion: '2h 33m', 
+        critica: 'https://www.rottentomatoes.com/m/inglourious_basterds/reviews', 
+        trailer: 'https://www.youtube.com/watch?v=XrDTjOV7kU0', 
+        categoria: 'pelicula',
+        genero: 'Accion',
+        img: 'https://spoilertime.com/wp-content/uploads/2019/08/7e12ea38a8245339bab45ad785499ad5-576x1024.jpg'
+    },
+    {
+        id: 2,
+        titulo: 'MAD MAX: Furia en camino', 
+        sinopsis: 'Aunque está decidido a vagar solo por el páramo post-apocalíptico, Mad Max se une a Furiosa, una comandante fugitiva, y su banda, quienes están tratando de escapar de un señor de la guerra.', 
+        director: 'George Miller', 
+        anioPub: 2015, 
+        duracion: '2horas', 
+        critica: 'https://www.rottentomatoes.com/m/mad_max_fury_road/reviews', 
+        trailer: 'https://www.youtube.com/watch?v=1bsnGZq2zDU', 
+        categoria: 'pelicula', 
+        genero: 'accion', 
+        img: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b1d1ee169328487.644a87f7d7000.jpg'
+    },
+    {
+        id: 3,
+        titulo: 'El Justiciero', 
+        sinopsis: 'El exagente secreto estadounidense Robert McCall continúa combatiendo por su cuenta a secuestradores, maltratadores y otros delincuentes que se cruzan en su solitaria vida de conductor de un servicio de VTC. Ahora, sin embargo, va a tener que intervenir en un asunto que le afecta personalmente.', 
+        director: 'Antoine Fuqua', 
+        anioPub: 2014, 
+        duracion: '2h 12m', 
+        critica: 'https://www.rottentomatoes.com/m/the_equalizer_2013', 
+        trailer: 'https://www.youtube.com/watch?v=j7RlqH5PXLo', 
+        categoria: 'pelicula', 
+        genero: 'accion', 
+        img: 'https://musicart.xboxlive.com/7/08350d00-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080'
+    },
+    {
+        id: 4,
+        titulo: 'Rescate Imposible', 
+        sinopsis: 'Un equipo del Delta Force sufre una emboscada en territorio enemigo, pero un oficial novato se niega a abandonar a sus compañeros. Se inicia entonces una batalla infernal por la supervivencia en la que solo reciben la ayuda de un piloto de drones.', 
+        director: 'William Eubank', 
+        anioPub: 2024, 
+        duracion: '1h 54m', 
+        critica: 'https://www.rottentomatoes.com/m/land_of_bad', 
+        trailer: 'https://www.youtube.com/watch?v=oNV-Lubri8s', 
+        categoria: 'pelicula', 
+        genero: 'Accion',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8JKzEuacLE_RTIVhVMWmgdghm2Ckkvpt4fQ&s'
+    },
+    {
+        id: 5,
+        titulo: 'House of Dragon', 
+        sinopsis: 'La trama de esta serie, radica en la asunción al trono de Viserys Targaryen (Paddy Considine), quien, a falta de un heredero, deberá decidir quién será la persona que ocupe su lugar en el Trono de Hierro, después de su muerte.', 
+        director: 'Alan Taylor', 
+        anioPub: 2024, 
+        duracion: '2 temporadas', 
+        critica: 'https://www.rottentomatoes.com/tv/house_of_the_dragon', 
+        trailer: 'https://www.youtube.com/watch?v=-nbh77bt9jY&pp=ygUSbGEgY2FzYSBkZWwgZHJhZ29u', 
+        categoria: 'serie', 
+        genero: 'Accion', 
+        img: 'https://m.media-amazon.com/images/M/MV5BM2QzMGVkNjUtN2Y4Yi00ODMwLTg3YzktYzUxYjJlNjFjNDY1XkEyXkFqcGc@._V1_.jpg'
+    },
+    {
+        id: 6,   
+        titulo: 'Volver al futuro', 
+        sinopsis: 'Una máquina del tiempo transporta a un adolescente a los años 50, cuando sus padres todavía estudiaban en la secundaria.', 
+        director: 'Robert Zemeckis',
+        anioPub: 1985, 
+        duracion: '1h 56m', 
+        critica: 'https://www.rottentomatoes.com/m/back_to_the_future', 
+        trailer: 'https://www.youtube.com/watch?v=GM6_MHRc4Xo', 
+        categoria: 'pelicula', 
+        genero: 'Sci-Fi', 
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARwCFB6M36a-YEdVSHKjbJjAiic23UyYlvA&s'
+    },
+    {
+        id: 7,
+        titulo: 'Presagio', 
+        sinopsis:'Después de leer unas predicciones terribles en una cápsula del tiempo, un profesor de astronomía cree que su familia jugará un papel importante en unos eventos que están por suceder.',
+        director: 'Alex Proyas', 
+        anioPub: 2009, 
+        duracion: '2h 1m', 
+        critica: 'https://www.rottentomatoes.com/m/presagio/reviews?type=user', 
+        trailer: 'https://www.youtube.com/watch?v=QeeiTXWEp-k&pp=ygUIcHJlc2FnaW8%3D', 
+        categoria: 'pelicula', 
+        genero: 'Sci-Fi', 
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRKBDmbUQPyNOR8FEl9ZOuw3NRr5t6lIkww&s'
+    },
+    {
+        id: 8,
+        titulo: 'El Origen', 
+        sinopsis:'Dom Cobb es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarles los secretos de sus subconscientes. Su habilidad lo ha vuelto muy popular en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.', 
+        director: 'Christopher Nolan', 
+        anioPub: 2010, 
+        duracion: '2h 28m', 
+        critica: 'https://www.rottentomatoes.com/m/inception/reviews', 
+        trailer: 'https://www.youtube.com/watch?v=BZOMKZ0AwC8&pp=ygUJZWwgb3JpZ2Vu', 
+        categoria: 'pelicula', 
+        genero: 'Sci-Fi', 
+        img: 'https://m.media-amazon.com/images/I/81RvLBMmKiL._AC_UF894,1000_QL80_.jpg'
+    },
+    {
+        id: 9,
+        titulo: 'La Inmaculada',
+        sinopsis: 'Una monja estadounidense llega a un convento de la campiña italiana. Allí descubre que, a pesar de ser virgen, está embarazada. Al mismo tiempo, comienza a sospechar que algo perverso ocurre entre los muros del convento.',
+        director: 'Michael Mohan',
+        categoria: 'Terror',
+        anioPub: 2024,
+        duracion: '1h 29m',
+        trailer: 'https://www.youtube.com/watch?v=1QbnnwkOXrU',
+        critica: 'https://www.rottentomatoes.com/m/immaculate_2024/reviews',
+        categoria: 'pelicula',
+        genero: 'Terror',
+        img: 'https://static.cinepolis.com/resources/mx/movies/posters/414x603/45982-582191-20240403081748.jpg'
+    }
+]
+
+export default movies;

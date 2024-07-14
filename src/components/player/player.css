@@ -1,0 +1,35 @@
+.container {
+    margin-top: 100px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-player {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.img-player {
+    width: 50vmin;
+    height: 80vmin;
+}
+  
+/* Flex Player */
+.player-flex-container {
+   display: flex;
+}
+  
+.player-flex-container > div {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+  
+.label-player {
+    font-size: medium;
+    color: white;
+}

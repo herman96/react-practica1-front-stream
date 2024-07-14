@@ -2,12 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Directorio from './views/directorio';
+import FormStream from './views/formulario';
+import Player from './components/player/player';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import movies from './data/movies';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>
+  },
+  {
+    path: "/Catalogo",
+    element: <Directorio />
+  },
+  {
+    path: "/Formulario/:movieId",
+    element: <FormStream movies={movies}/>
+  },
+  {
+    path: "Catalogo/Details/:movieId",
+    element: <Player movies={movies}/>
+  }
+])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
