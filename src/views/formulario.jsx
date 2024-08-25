@@ -3,19 +3,23 @@ import Nav from '../components/NavBar/navbar';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { useFetch } from '../service/HostService'; 
+
 function FormStream({movies}) {
-    const {movie} = useParams();
-    const props = movies.find(movie => movie.id = movie);
-    console.log(props.titulo);
+    const { data } = useFetch("multimedia/" + movies);
+    //console.log("Data recibida:", data);
+    //const {movie} = useParams();
+    //const props = movies.find(movie => movie.id = movie);
+    //console.log(props.titulo);
     const [datos, setDatos] = useState({
-        pelicula: props.titulo,
+        pelicula: data.titulo,
         alquiler: false,
         compra: false,
         usuario: '',
         nombre: '',
         email: '',
         direccion: '',
-        img: props.img
+        img: data.imagen
     });
 
     function setAlquilar(data) {

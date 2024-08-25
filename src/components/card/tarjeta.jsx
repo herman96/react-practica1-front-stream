@@ -5,8 +5,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import movies from '../../data/movies';
 
+import { useFetch } from '../../service/HostService'; 
+
 function Cards() {
-  const [dataMovie1] = useState({
+  /*const [dataMovie1] = useState({
     id: 1,
     Titulo: 'Bastardos Sin Gloria',
     Sinopsis: 'II Guerra Mundial, Francia, Shosanna presencia la ejecución de su familia por orden del coronel nazi Hans Landa. Huye a Paris y adopta una nueva identidad como propietaria de un cine. Mientras el teniente Aldo Raine adiestra a un grupo de soldados judíos. Los hombres de Raine y una actriz alemana que agente doble, deben llevar a cabo una misión que hará caer a los jefes del Tercer Reich. El destino quiere que todos se encuentren bajo la marquesina de un cine donde Shosanna espera para vengarse.',
@@ -70,96 +72,28 @@ function Cards() {
     AnioPub: '2024',
     url: 'https://www.youtube.com/watch?v=1QbnnwkOXrU',
     critica: 'https://www.rottentomatoes.com/m/immaculate_2024/reviews'
-  });
+  });*/
 
+  const { data } = useFetch("multimedias");
+  console.log("Data recibida: ", data);
   return (
     <div>
         <div className="flex-container">
-          <div class="flip-card">
+          {data?.map((multimedia) => ( 
+            <div class="flip-card">
               <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                      <h3>{dataMovie1.Titulo}</h3>
-                      <p>Director: {dataMovie1.Director}</p>
-                      <p>Categoria: {dataMovie1.Categoria}</p>
-                      <Link to={`Details/${dataMovie1.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
+                <div class="flip-card-front">
+                  <img src={multimedia.imagen} className='img-directorio' />
+                </div>
+                <div class="flip-card-back">
+                  <h3>{multimedia.titulo}</h3>
+                  <p>Director: {multimedia.director}</p>
+                  <p>Categoria: {multimedia.categoria}</p>
+                  <Link to={`Details/${multimedia.idMultimedia}`}><input className="button-formulario" value="+ Info" /></Link>
+                </div>
               </div>
-          </div>
-
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                      <h3>{dataMovie2.Titulo}</h3>
-                      <p>Director: {dataMovie2.Director}</p>
-                      <p>Categoria: {dataMovie2.Categoria}</p>
-                      <Link to={`Details/${dataMovie2.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
-              </div>
-          </div>
-
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                    <h3>{dataMovie3.Titulo}</h3>
-                    <p>Director: {dataMovie3.Director}</p>
-                    <p>Categoria: {dataMovie3.Categoria}</p>
-                    <Link to={`Details/${dataMovie3.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
-              </div>
-          </div>
-        </div>
-
-        <div className="flex-container">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                      <h3>{dataMovie4.Titulo}</h3>
-                      <p>Director: {dataMovie4.Director}</p>
-                      <p>Categoria: {dataMovie4.Categoria}</p>
-                      <Link to={`Details/${dataMovie4.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
-              </div>
-          </div>
-
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                      <h3>{dataMovie5.Titulo}</h3>
-                      <p>Director: {dataMovie5.Director}</p>
-                      <p>Categoria: {dataMovie5.Categoria}</p>
-                      <Link to={`Details/${dataMovie5.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
-              </div>
-          </div>
-
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img src={movie1} className='img-directorio' />
-                  </div>
-                  <div class="flip-card-back">
-                      <h3>{dataMovie6.Titulo}</h3>
-                      <p>Director: {dataMovie6.Director}</p>
-                      <p>Categoria: {dataMovie6.Categoria}</p>
-                      <Link to={`Details/${dataMovie6.id}`}><input className="button-formulario" value="+ Info" /></Link>
-                  </div>
-              </div>
-          </div>
+            </div>
+          ))}
         </div>
     </div>
   );

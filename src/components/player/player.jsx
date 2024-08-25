@@ -9,19 +9,23 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+import { useFetch } from '../../service/HostService'; 
+
 function Player({movies}) {
-    const {movieId} = useParams();
-    const props = movies.find(movieId => movieId.id = movieId);
-    console.log(movieId);
+    //const {movieId} = useParams();
+    //const props = movies.find(movieId => movieId.id = movieId);
+    //console.log(movieId);
+    const { data } = useFetch("multimedia/" + movies);
+    console.log("Data recibida:", data);
     const [datos] = useState({
-        id: props.id,
-        Titulo: props.titulo,
-        url: props.trailer, //'https://www.youtube.com/watch?v=oNV-Lubri8s',
-        sinopsis: props.sinopsis, //'Un equipo del Delta Force sufre una emboscada en territorio enemigo, pero un oficial novato se niega a abandonar a sus compañeros. Se inicia entonces una batalla infernal por la supervivencia en la que solo reciben la ayuda de un piloto de drones.',
-        director: props.director, //'William Eubank',
-        AnioPub: props.anioPub,
-        critica: props.critica,
-        img: props.img
+        id: data.idMultimedia,
+        Titulo: data.titulo,
+        url: data.trailer, //'https://www.youtube.com/watch?v=oNV-Lubri8s',
+        sinopsis: data.sinopsis, //'Un equipo del Delta Force sufre una emboscada en territorio enemigo, pero un oficial novato se niega a abandonar a sus compañeros. Se inicia entonces una batalla infernal por la supervivencia en la que solo reciben la ayuda de un piloto de drones.',
+        director: data.director, //'William Eubank',
+        AnioPub: data.anio_publicacion,
+        critica: data.criticas,
+        img: data.imagen
     }); 
     return (
         <div className="App App-header">
