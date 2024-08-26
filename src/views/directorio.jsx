@@ -1,9 +1,9 @@
 import '../App.css';
 import '../components/card/card.css';
 import Nav from '../components/NavBar/navbar';
-import Cards from '../components/card/tarjeta';
-
-import { useFetch } from '../../service/HostService'; 
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useFetch } from '../service/HostService'; 
 
 function Directorio() {
     const [category, setCategory] = useState({
@@ -15,34 +15,19 @@ function Directorio() {
     });
 
     const { categoria } = useFetch("categorias");
-    const { genero  } = useFetch("generos");
-
-    function setMovies() {
-        if(genere.idGen != 0 && category.idCat == 0) {
-            const { data  } = useFetch("multimedia/genero/" + genere.idGen);
-        }
-        if(genere.idCat == 0 && category.idCat != 0) {
-            const { data  } = useFetch("multimedia/category/" + category.idCat);
-        }
-    }
+    
+    const { data  } = useFetch("multimedia/genero/" + genere.idGen);
     return (
         <div className="App App-header">
             <Nav />
             <div>
                 <div className="from-inline">
-                    <button class="btn default" onChange={setMovies}><i class="fa fa-filter"></i></button>
+                    <button class="btn default"><i class="fa fa-filter"></i></button>
                     <label>.........................</label>
                     <select name="categoria">
                         <option value="">--Elija una categoria--</option>
                         {categoria?.map((categorias) => (
                             <option key={categorias.idCategoria} value={category.idCat} onChange={setCategory}> { categorias.categoria } </option>
-                        ))}
-                    </select>
-                    <label>.........................</label>
-                    <select name="categoria">
-                        <option value="">--Elija un genero--</option>
-                        {genero?.map((generos) => (
-                            <option key={generos.idGenero} value={genere.idGen} onChange={setGenere}> { generos.genero } </option>
                         ))}
                     </select>
                 </div>
