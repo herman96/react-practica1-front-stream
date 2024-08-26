@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-export function useFetch(url) {
-  const [data, setData] = useState(null);
+export function useFetchCat(url) {
+  const [categoria, setCategoria] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     //fetch("https://pokeapi.co/api/v2/" + url,
     fetch("http://localhost:7000/" + url,  
-      {
+        {
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*'
@@ -16,9 +16,9 @@ export function useFetch(url) {
       }
     )
     .then((response) => response.json())
-    .then((data) => setData(data.results))
+    .then((categoria) => setCategoria(categoria.results))
     .finally(() => setLoading(false));
   }, []);
 
-  return { data, loading };
+  return { categoria, loading };
 }
