@@ -80,7 +80,7 @@ function FormStream({movies}) {
                 </div>
                 <form onSubmit={confirmar}>
                     <div>
-                        <div class="row">
+                        <div className="row">
                             <div>
                                 <p>...........</p>
                                 <h4 className="label-form"> Datos de lamina <i class="fa fa-film"></i> </h4>
@@ -88,14 +88,14 @@ function FormStream({movies}) {
                                 <label className="label-form" ><i class="fa fa-film"></i> Lamina:  </label>
                                 <input className="input-form" type="text" value={datos.pelicula} readOnly />
                                 .
-                                <div class="row">
+                                <div className="row">
                                     <div class="col-20"></div>
                                     <label className="label-form">
                                         <input type="checkbox" value={datos.alquiler} onChange={setAlquilar} /> Alquiler &nbsp;
                                     </label>
                                 </div>
                                 <p>...........</p>
-                                <div class="row">
+                                <div className="row">
                                     <label className="label-form">
                                         <input type="checkbox" value={datos.compra} onChange={setCompra}/> Compra
                                     </label>
@@ -106,26 +106,26 @@ function FormStream({movies}) {
                     <div>
                     <p>...........</p>
                     <p>...........</p>
-                        <h4 className="label-form"> Datos de Usuario <i class="fa fa-user"></i> </h4>
+                        <h4 className="label-form"> Datos de Usuario <i className="fa fa-user"></i> </h4>
                         <p className="label-form">----------------------</p>
-                        <div class="row">
-                            <label className="label-form" ><i class="fa fa-user"></i> Usuario:  </label>
+                        <div className="row">
+                            <label className="label-form" ><i className="fa fa-user"></i> Usuario:  </label>
                             <input className="input-form" type="text" value={datos.usuario} onChange={setUsuario} />
                         </div>
-                        <div class="row">
-                            <label className="label-form" ><i class="fa fa-user"></i> Nombre:  </label>
+                        <div className="row">
+                            <label className="label-form" ><i className="fa fa-user"></i> Nombre:  </label>
                             <input className="input-form" type="text" value={datos.nombre} onChange={setNombre} />
                         </div>
-                        <div class="row">
-                            <label className="label-form" ><i class="fa fa-envelope"></i> Email:  </label>
+                        <div className="row">
+                            <label className="label-form" ><i className="fa fa-envelope"></i> Email:  </label>
                             <input className="input-form" type="text" value={datos.email} onChange={setEmail} />
                         </div>
-                        <div class="row">
-                            <label className="label-form" ><i class="fa fa-address-card-o"></i> Direccion:  </label>
+                        <div className="row">
+                            <label className="label-form" ><i className="fa fa-address-card-o"></i> Direccion:  </label>
                             <input className="input-form" type="text" value={datos.direccion} onChange={setAddress} />    
                         </div>
                     </div>
-                    <div class="row">
+                    <div className="row">
                         <input className="button-formulario" type="submit" value="Guardar" />
                     </div>
                 </form>

@@ -75,20 +75,19 @@ function Cards() {
   });*/
 
   const { data } = useFetch("multimedias");
-  console.log("Data recibida: ", data);
   return (
     <div>
         <div className="flex-container">
           {data?.map((multimedia) => ( 
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
                   <img src={multimedia.imagen} className='img-directorio' />
                 </div>
-                <div class="flip-card-back">
+                <div className="flip-card-back">
                   <h3>{multimedia.titulo}</h3>
                   <p>Director: {multimedia.director}</p>
-                  <p>Categoria: {multimedia.categoria}</p>
+                  <p>Categoria: {multimedia.categoria.idCategoria}</p>
                   <Link to={`Details/${multimedia.idMultimedia}`}><input className="button-formulario" value="+ Info" /></Link>
                 </div>
               </div>

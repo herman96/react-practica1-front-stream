@@ -33,26 +33,26 @@ function Player({movies}) {
             <div className="container">
                 <div className="player-flex-container">
                     <div>
-                        <div class="row">
+                        <div className="row">
                             <img src={datos.img} className="img-player" />
                         </div>
                         <Link to={`/Formulario/${datos.id}`}><input className="button-formulario" value="Obtener" /></Link>
                     </div>
                     <div>
-                        <div class="row">
+                        <div className="row">
                             <div className="container-player">
                                 <ReactPlayer url={datos.url} controls/>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <label className="label-player">Director: {datos.director} </label>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <label className="label-player">Publicacion: {datos.AnioPub} </label>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <label className="label-player">Sinopsis: {datos.sinopsis} </label>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <a className="label-player" href={datos.critica}>Critica</a>
                             </div>
                         </div>

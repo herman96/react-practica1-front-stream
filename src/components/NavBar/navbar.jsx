@@ -4,15 +4,14 @@ import "./navbar.css";
 
 function Nav() {
   return (
-    <div class="ul-navbar">
+    <div className="ul-navbar">
       <a>
         <Link to="/"><img src={logo} className="logo" /></Link> 
       </a>
-      <a></a>
       <Link to="Catalogo"><a>Directorio</a></Link>
-      <div class="search-container">
+      <div className="search-container">
         <input type="text" placeholder="Buscar.." name="search" />
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit"><i className="fa fa-search"></i></button>
       </div>
     </div>
   );

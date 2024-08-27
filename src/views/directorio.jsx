@@ -18,7 +18,7 @@ function Directorio() {
             <Nav />
             <div>
                 <div className="from-inline">
-                    <button class="btn default"><i class="fa fa-filter"></i></button>
+                    <button className="btn default"><i className="fa fa-filter"></i></button>
                     <label>.........................</label>
                     <select name="categoria">
                         <option value="">--Elija una categoria--</option>

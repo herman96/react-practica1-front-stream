@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export function useFetchGen(url) {
+  console.log(url)
   const [genero, setGenero] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +17,7 @@ export function useFetchGen(url) {
       }
     )
     .then((response) => response.json())
-    .then((genero) => setGenero(genero.results))
+    .then((genero) => setGenero(genero))
     .finally(() => setLoading(false));
   }, []);
 

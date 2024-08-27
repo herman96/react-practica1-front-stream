@@ -18,15 +18,15 @@ function SlideImage() {
           <li><img src={serie3} /></li>
         </ul>
       </div>
-      <div class="card-container row">
+      <div className="card-container row">
         <h2>Accion</h2>
         <Card />
       </div>
-      <div class="card-container row">
+      <div className="card-container row">
         <h2>Terror</h2>
         <Card />
       </div>
-      <div class="card-container row">
+      <div className="card-container row">
         <h2>Drama</h2>
         <Card />
       </div>
